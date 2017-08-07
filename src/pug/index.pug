@@ -10,8 +10,15 @@ block content-block
       = settings.site_name
 
   main
-    ul
-      each item in works
-        li.item
-          a(href=`${rootPath}detail/${item.id}.html`)
-            img(src=`${dataPath}${item.id}.png`, alt= item.id)
+    .cfm-index
+      ul.list
+        each item in works
+          .cfm-card
+            a.elm-a(href=`${rootPath}detail/${item.id}.html`)
+              .card.mdl-card.mdl-shadow--2dp(style=`background: url('${dataPath}${item.picture}') center / cover`)
+                .title.mdl-card__title.mdl-card--expand
+                  h2.heading
+                    = item.id
+                .actions.mdl-card__actions
+                  span.filename.demo-card-image__filename
+                    = item.picture
