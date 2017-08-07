@@ -2,12 +2,16 @@ extends /_layout/_default-layout
 
 append config-block
   - pageId = 'index'
+  - dataPath = `${rootPath}data/`
 
 block content-block
   header
     h1
-      | Index Page
+      = settings.site_name
 
   main
-    p
-      | content
+    ul
+      each item in works
+        li.item
+          a(href=`${rootPath}detail/${item.id}.html`)
+            img(src=`${dataPath}${item.id}.png`, alt= item.id)
