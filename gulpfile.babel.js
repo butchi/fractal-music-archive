@@ -8,6 +8,7 @@ import sassGlob from 'gulp-sass-glob';
 import pleeease from 'gulp-pleeease';
 import browserify from 'browserify';
 import babelify from 'babelify';
+import postman from 'gulp-postman';
 import pug from 'gulp-pug';
 import rename from 'gulp-rename';
 import uglify from 'gulp-uglify';
@@ -110,10 +111,16 @@ gulp.task('js', gulp.series(gulp.parallel('browserify', 'copy-bower-js'), gulp.p
 gulp.task('pug', () => {
   const locals = {
     meta: readConfig(`${CONFIG}/meta.yml`),
+    works: readConfig(`${CONFIG}/works.json`).sheet,
     versions: revLogger.versions(),
   };
 
   return gulp.src([`${SRC}/pug/**/[!_]*.pug`, `!${SRC}/pug/**/_*/**/*`])
+    .pipe(postman({
+      postParams: locals.works,
+      template: `${SRC}/pug/detail/index.pug`,
+      locals,
+    }))
     .pipe(pug({
       locals: locals,
       pretty: true,

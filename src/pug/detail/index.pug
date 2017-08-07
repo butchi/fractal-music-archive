@@ -1,14 +1,14 @@
 extends /_layout/_default-layout
 
 append config-block
-  - pageId = 'sub'
+  - pageId = 'detail'
   - rootPath = '../'
 
 block content-block
   header
     h1
-      | Sub Page
+      = meta.id
 
   main
     p
-      | content
+      = meta.video
