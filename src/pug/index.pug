@@ -4,6 +4,20 @@ append config-block
   - pageId = 'index'
   - dataPath = `${rootPath}data/`
 
+mixin cfm-card(opts)
+  -
+    const { title, link, picture, filename } = opts;
+
+  .cfm-card
+    a.elm-a(href= link)
+      .card.mdl-card.mdl-shadow--2dp(style=`background: url('${picture}') center / cover`)
+        .title.mdl-card__title.mdl-card--expand
+          h2.heading
+            = title
+        .actions.mdl-card__actions
+          span.filename.demo-card-image__filename
+            = filename
+
 block content-block
   header
     h1
@@ -13,12 +27,9 @@ block content-block
     .cfm-index
       ul.list
         each item in works
-          .cfm-card
-            a.elm-a(href=`${rootPath}detail/${item.id}.html`)
-              .card.mdl-card.mdl-shadow--2dp(style=`background: url('${dataPath}${item.picture}') center / cover`)
-                .title.mdl-card__title.mdl-card--expand
-                  h2.heading
-                    = item.id
-                .actions.mdl-card__actions
-                  span.filename.demo-card-image__filename
-                    = item.picture
+          +cfm-card({
+            title: item.id,
+            link: `${rootPath}detail/${item.id}.html`,
+            picture: `${dataPath}${item.picture}`,
+            filename: item.picture,
+          })
