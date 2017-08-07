@@ -27,7 +27,7 @@ const DEST = `${HTDOCS}${BASE_PATH}`;
 
 const revLogger = new RevLogger({
     'style.css': `${DEST}/css/style.css`,
-    'script.js': `${DEST}/js/script.js`
+    'script.js': `${DEST}/js/script.js`,
 });
 
 
@@ -36,7 +36,7 @@ gulp.task('copy-bower-css', () => {
   return gulp.src(
     [
       'material-design-lite/material.min.css',
-      'material-design-lite/material.min.css.map'
+      'material-design-lite/material.min.css.map',
     ], {
     cwd: 'node_modules',
   })
@@ -54,19 +54,18 @@ gulp.task('sass', () => {
   ;
 });
 
-// gulp.task('css', gulp.series(gulp.parallel('sass', 'copy-bower-css')));
-gulp.task('css', gulp.series('sass'));
+gulp.task('css', gulp.series(gulp.parallel('sass', 'copy-bower-css')));
 
 
 // js
 gulp.task('copy-bower-js', () => { 
   return gulp.src(
     [
-      // 'material-design-lite/material.min.js',
-      // 'material-design-lite/material.min.js.map',
+      'material-design-lite/material.min.js',
+      'material-design-lite/material.min.js.map',
       'jquery/dist/jquery.min.js',
       'jquery/dist/jquery.min.map',
-      'lodash/lodash.min.js'
+      'lodash/lodash.min.js',
     ], {
     cwd: 'node_modules',
   })
@@ -104,7 +103,6 @@ gulp.task('deco', () => {
   ;
 });
 
-// gulp.task 'js', gulp.parallel('browserify', 'copy-bower-js')
 gulp.task('js', gulp.series(gulp.parallel('browserify', 'copy-bower-js'), gulp.parallel('minify', 'deco')));
 
 
