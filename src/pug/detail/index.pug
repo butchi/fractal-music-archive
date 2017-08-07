@@ -3,6 +3,7 @@ extends /_layout/_default-layout
 append config-block
   - pageId = 'detail'
   - rootPath = '../'
+  - dataPath = `${rootPath}data/`
 
 block content-block
   header
@@ -10,5 +11,7 @@ block content-block
       = meta.id
 
   main
-    p
-      = meta.video
+    .picture
+      img(src=`${dataPath}${meta.picture}`, alt= meta.id)
+    .video
+      video(src=`${dataPath}${meta.video}`, controls)
