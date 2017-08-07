@@ -110,7 +110,7 @@ gulp.task('js', gulp.series(gulp.parallel('browserify', 'copy-bower-js'), gulp.p
 // html
 gulp.task('pug', () => {
   const locals = {
-    meta: readConfig(`${CONFIG}/meta.yml`),
+    settings: readConfig(`${CONFIG}/meta.yml`),
     works: readConfig(`${CONFIG}/works.json`).sheet,
     versions: revLogger.versions(),
   };
