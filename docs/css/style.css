@@ -99,6 +99,10 @@ html.is-pc .wrapper {
   width: 100%;
   height: auto; }
 
+[data-page-id="index"] .index-header .title {
+  font-size: 36px;
+  font-size: 0.36rem; }
+
 [data-page-id="index"] .cfm-index .list {
   font-size: 0; }
 
