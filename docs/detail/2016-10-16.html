@@ -20,22 +20,35 @@
     <meta property="twitter:description" content="web-starter web page.">
     <script src="../js/ua-switch.js"></script>
     <!-- stylesheet-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/lib/material.min.css">
-    <link rel="stylesheet" href="../css/style.css?v=2">
+    <link rel="stylesheet" href="../css/style.css?v=3">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:700,400">
   </head>
   <body data-page-id="detail">
     <div class="wrapper">
-      <header>
-        <h1>2016-10-16
-        </h1>
-      </header>
-      <main>
-        <div class="picture"><img src="../data/2016-10-16.png" alt="2016-10-16"></div>
-        <div class="video">
-          <video src="../data/2016-10-16.mp4" controls></video>
+      <div class="cfm-layout">
+        <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header mdl-layout__header--transparent">
+            <div class="mdl-layout__header-row">
+              <h1 class="mdl-layout-title">2016-10-16
+              </h1>
+              <div class="mdl-layout-spacer"></div>
+              <nav class="mdl-navigation"><a class="mdl-navigation__link" href="../">Home</a></nav>
+            </div>
+          </header>
+          <div class="mdl-layout__drawer"><span class="mdl-layout-title">作品一覧</span>
+            <nav class="mdl-navigation"><a class="mdl-navigation__link" href="../detail/2016-10-13.html">2016-10-13</a><a class="mdl-navigation__link" href="../detail/2016-10-14.html">2016-10-14</a><a class="mdl-navigation__link" href="../detail/2016-10-15.html">2016-10-15</a><a class="mdl-navigation__link" href="../detail/2016-10-16.html">2016-10-16</a><a class="mdl-navigation__link" href="../detail/2016-10-17.html">2016-10-17</a>
+            </nav>
+          </div>
+          <main class="mdl-layout__content">
+            <div class="picture"><img src="../data/2016-10-16.png" alt="2016-10-16"></div>
+            <div class="video">
+              <video src="../data/2016-10-16.mp4" controls></video>
+            </div>
+          </main>
         </div>
-      </main>
+      </div>
     </div>
     <!-- javascript-->
     <script src="../js/lib/jquery.min.js"></script>
