@@ -38,7 +38,10 @@ block content-block
     drawerTitle: '作品一覧',
     works,
   })
-    .picture
-      img(src=`${dataPath}${meta.picture}`, alt= meta.id)
-    .video
-      video(src=`${dataPath}${meta.video}`, controls)
+    .mdl-grid
+      .mdl-cell.mdl-cell--4-col
+        .picture
+          img.elm-img(src=`${dataPath}${meta.picture}`, alt= meta.id)
+      .mdl-cell.mdl-cell--8-col
+        .video
+          video.elm-video(src=`${dataPath}${meta.video}`, controls)
