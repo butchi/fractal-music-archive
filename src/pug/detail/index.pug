@@ -5,12 +5,39 @@ append config-block
   - rootPath = '../'
   - dataPath = `${rootPath}data/`
 
-block content-block
-  header
-    h1
-      = meta.id
+mixin cfm-layout(opts)
+  -
+    const { layoutTitle, drawerTitle, works } = opts;
 
-  main
+  .cfm-layout
+    .demo-layout-transparent.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      header.mdl-layout__header.mdl-layout__header--transparent
+        .mdl-layout__header-row
+          //- Title
+          h1.mdl-layout-title
+            = meta.id
+          //- Add spacer, to align navigation to the right
+          .mdl-layout-spacer
+          //- Navigation
+          nav.mdl-navigation
+            a.mdl-navigation__link(href= rootPath)
+              | Home
+      .mdl-layout__drawer
+        span.mdl-layout-title
+          = drawerTitle
+        nav.mdl-navigation
+          each item in works
+            a.mdl-navigation__link(href=`${rootPath}detail/${item.id}.html`)
+              = item.id
+      main.mdl-layout__content
+        block
+
+block content-block
+  +cfm-layout({
+    layoutTitle: meta.id,
+    drawerTitle: '作品一覧',
+    works,
+  })
     .picture
       img(src=`${dataPath}${meta.picture}`, alt= meta.id)
     .video
