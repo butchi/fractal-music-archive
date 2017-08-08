@@ -82,15 +82,22 @@ html.is-pc .wrapper {
   width: 100%;
   overflow: hidden; }
 
-[data-page-id="detail"] .demo-layout-transparent {
+[data-page-id="detail"] .cfm-layout .layout {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
   /* IE6-9 */
   background-position: center;
   background-size: cover; }
-  [data-page-id="detail"] .demo-layout-transparent .mdl-layout__header,
-  [data-page-id="detail"] .demo-layout-transparent .mdl-layout__drawer-button {
+  [data-page-id="detail"] .cfm-layout .layout .header {
     color: white; }
+
+[data-page-id="detail"] .picture .elm-img {
+  width: 100%;
+  height: auto; }
+
+[data-page-id="detail"] .video .elm-video {
+  width: 100%;
+  height: auto; }
 
 [data-page-id="index"] .cfm-index .list {
   font-size: 0; }

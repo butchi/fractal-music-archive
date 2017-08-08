@@ -22,29 +22,35 @@
     <!-- stylesheet-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/lib/material.min.css">
-    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="../css/style.css?v=4">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:700,400">
   </head>
   <body data-page-id="detail">
     <div class="wrapper">
       <div class="cfm-layout">
-        <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
-          <header class="mdl-layout__header mdl-layout__header--transparent">
-            <div class="mdl-layout__header-row">
-              <h1 class="mdl-layout-title">2016-10-15
+        <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="header mdl-layout__header mdl-layout__header--transparent">
+            <div class="header-row mdl-layout__header-row">
+              <h1 class="layout-title mdl-layout-title">2016-10-15
               </h1>
-              <div class="mdl-layout-spacer"></div>
-              <nav class="mdl-navigation"><a class="mdl-navigation__link" href="../">Home</a></nav>
+              <div class="layout-spacer mdl-layout-spacer"></div>
+              <nav class="navigation mdl-navigation"><a class="link mdl-navigation__link" href="../">Home</a></nav>
             </div>
           </header>
-          <div class="mdl-layout__drawer"><span class="mdl-layout-title">作品一覧</span>
-            <nav class="mdl-navigation"><a class="mdl-navigation__link" href="../detail/2016-10-13.html">2016-10-13</a><a class="mdl-navigation__link" href="../detail/2016-10-14.html">2016-10-14</a><a class="mdl-navigation__link" href="../detail/2016-10-15.html">2016-10-15</a><a class="mdl-navigation__link" href="../detail/2016-10-16.html">2016-10-16</a><a class="mdl-navigation__link" href="../detail/2016-10-17.html">2016-10-17</a>
+          <div class="drawer mdl-layout__drawer"><span class="title mdl-layout-title">作品一覧</span>
+            <nav class="navigation mdl-navigation"><a class="link mdl-navigation__link" href="../detail/2016-10-13.html">2016-10-13</a><a class="link mdl-navigation__link" href="../detail/2016-10-14.html">2016-10-14</a><a class="link mdl-navigation__link" href="../detail/2016-10-15.html">2016-10-15</a><a class="link mdl-navigation__link" href="../detail/2016-10-16.html">2016-10-16</a><a class="link mdl-navigation__link" href="../detail/2016-10-17.html">2016-10-17</a>
             </nav>
           </div>
-          <main class="mdl-layout__content">
-            <div class="picture"><img src="../data/2016-10-15.png" alt="2016-10-15"></div>
-            <div class="video">
-              <video src="../data/2016-10-15.mp4" controls></video>
+          <main class="main mdl-layout__content">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--4-col">
+                <div class="picture"><img class="elm-img" src="../data/2016-10-15.png" alt="2016-10-15"></div>
+              </div>
+              <div class="mdl-cell mdl-cell--8-col">
+                <div class="video">
+                  <video class="elm-video" src="../data/2016-10-15.mp4" controls></video>
+                </div>
+              </div>
             </div>
           </main>
         </div>
